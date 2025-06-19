@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Order Hider</title>
+    <style>
+        /* --- General & Dark Mode Theme --- */
+        body {
+            width: 320px;
+            font-family: sans-serif;
+            padding: 15px;
+            background-color: #1f2937;
+            color: #e5e7eb;
+            box-sizing: border-box;
+        }
+        h3 { margin-top: 0; text-align: center; margin-bottom: 1rem; }
+        h4 { text-align: center; margin-bottom: 0.5rem; margin-top: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #374151; }
+
+        /* --- Form Elements --- */
+        #orderIdInput {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: #374151;
+            border: 1px solid #4b5563;
+            border-radius: 4px;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+        #orderIdInput:focus { outline: none; border-color: #3b82f6; }
+        #saveButton {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #saveButton:hover { background-color: #1d4ed8; }
+        #status { font-style: italic; color: #48bb78; font-size: 0.8em; height: 1em; margin-top: 5px; text-align: center; }
+
+        /* --- Order List --- */
+        #orderList { list-style: none; padding: 0; margin-top: 10px; max-height: 250px; overflow-y: auto; }
+        #orderList li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            background-color: rgba(55, 65, 81, 0.5);
+        }
+        /* Container for the ID and Date */
+        .order-details {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .order-id { font-family: monospace; }
+        .order-date { font-size: 0.90em; color: #9ca3af; }
+        .remove-btn {
+            cursor: pointer;
+            color: #f87171;
+            font-weight: bold;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            padding: 0 0 0 10px; /* Add padding to not crowd text */
+            margin-left: auto; /* Push to the right */
+        }
+        .remove-btn:hover { color: #fca5a5; }
+    </style>
+</head>
+<body>
+    <h3>Hide an Amazon Order</h3>
+    <input type="text" id="orderIdInput" placeholder="Enter Order ID (e.g., 123-1234567-1234567)">
+    <button id="saveButton">Save & Hide Order</button>
+    <p id="status"></p>
+
+    <h4>Currently Hidden Orders</h4>
+    <ul id="orderList"></ul>
+
+    <script src="popup.js"></script>
+</body>
+</html>
