@@ -35,13 +35,13 @@ function hideMatchingOrders() {
                 if (hiddenOrderIds.includes(matchedId)) {
                     console.log(`[Amazon Order Hider] MATCH FOUND! Hiding order: ${matchedId}`);
                     
-                    const orderListItem = element.closest('.order-card__list');
+                    const orderListItem = element.closest('.order-card');
                     
                     if (orderListItem) {
                         orderListItem.style.display = 'none';
-                        console.log(`[Amazon Order Hider] SUCCESS: Hid parent '.order-card__list' for order ${matchedId}`);
+                        console.log(`[Amazon Order Hider] SUCCESS: Hid parent '.order-card' for order ${matchedId}`);
                     } else {
-                        console.error(`[Amazon Order Hider] FAILED: Could not find parent '.order-card__list' for order ${matchedId}`);
+                        console.error(`[Amazon Order Hider] FAILED: Could not find parent '.order-card' for order ${matchedId}`);
                     }
                 }
             }
